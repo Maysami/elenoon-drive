@@ -1,7 +1,8 @@
 package com.owncloud.android.test;
 
-import com.owncloud.android.db.ProviderMeta.ProviderTableMeta;
-import com.owncloud.android.providers.FileContentProvider;
+import com.elenoondrive.android.db.ProviderMeta.ProviderTableMeta;
+import com.elenoondrive.android.providers.FileContentProvider;
+
 import android.annotation.TargetApi;
 import android.net.Uri;
 import android.os.Build;
