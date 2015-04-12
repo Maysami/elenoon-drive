@@ -25,4 +25,9 @@
     <color name="textColor">#303030</color>
     <color name="list_divider_background">#fff0f0f0</color>
     
+    <color name="welcome_background_color">#00bcbe</color>
+    <color name="welcome_round_color">#e0f4f5</color>
+    <color name="actionbarcolor">#00bcbe</color>
+    <color name="elenoon_green">#059301</color>
+    
 </resources>

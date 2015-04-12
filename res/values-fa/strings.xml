@@ -18,11 +18,13 @@
     	<!-- TODO re-enable when server-side folder size calculation is available   
     	<item>Biggest - Smallest</item>  -->
     </string-array>
+    <string name="actionbar_logout">خروج</string>
     <string name="prefs_instant_upload">بارگذاری تصاویر جدید</string>
     <string name="prefs_instant_upload_summary">بارگذاری بلافاصله تصاویر ثبت شده با دوربین</string>
     <string name="prefs_instant_video_upload">بارگذاری ویدیو های جدید</string>
     <string name="prefs_instant_video_upload_summary">بارگذاری بلافاصله ویدیو های ثبت شده با دوربین</string>
-
+	<!-- ACRA -->
+  <string name="send_error_report">لطفاً خطای روی داده را به منظور بهبود برنامه ارسال فرمایید</string>
   <string name="actionbar_settings">تنظیمات</string>
   <string name="actionbar_see_details">جزئیات</string>
   <string name="actionbar_send_file">ارسال</string>
@@ -50,7 +52,7 @@
   <string name="auth_password">رمز عبور</string>
   <string name="auth_register">نسبت به %1$s آشنا نیستید؟</string>
   <string name="sync_string_files">پرونده‌ها</string>
-  <string name="setup_btn_connect">اتصال</string>
+  <string name="setup_btn_connect">ورود</string>
   <string name="uploader_btn_upload_text">بارگذاری</string>
   <string name="uploader_top_message">انتخاب پوشه آپلود:</string>
   <string name="uploader_wrn_no_account_title">هیچ حسابی یافت نشد</string>
@@ -255,4 +257,35 @@
   <string name="saml_authentication_wrong_pass">رمز عبور اشتباه است</string>
   <string name="folder_picker_choose_button_text">انتخاب کردن</string>
   <string name="prefs_category_security">امنیت</string>
+  
+  <string name="in_the_name_of_god">بــسمــه تــعــالــی</string>
+  <string name="send_sms_buttontext">ارسال پیامک</string>
+     <!-- Welcome message -->
+  <string name="welcome_message_title">به اِلِنون خوش آمدید!</string>
+  <string name="account_setup_basics_email_hint">آدرس ایمیل</string>
+  <string name="account_setup_basics_password_hint">گذرواژه</string>
+  <string name="forgot_password">گذرواژه را فراموش کرده ام</string>
+  <string name="account_setup_basics_manual_setup_action">ثبت دستی</string>
+  <string name="account_setup_basics_activate_action">فعالسازی</string>
+  <string name="signin">ورود</string>
+  <string name="account_setup_basics_password_retype_hint">تکرار رمز عبور</string>
+  
+    <string name="change_password_hotkey">ر</string>
+    <string name="activate_account_hotkey">ر</string>
+      <!-- calendar -->
+    <string-array name="irMonthName">
+        <item>فروردین</item>
+        <item>ارديبهشت</item>
+        <item>خرداد</item>
+        <item>تير</item>
+        <item>مرداد</item>
+        <item>شهريور</item>
+        <item>مهر</item>
+        <item>آبان</item>
+        <item>آذر</item>
+        <item>دی</item>
+        <item>بهمن</item>
+        <item>اسفند</item>
+    </string-array>
+  
 </resources>

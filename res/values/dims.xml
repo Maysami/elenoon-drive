@@ -19,4 +19,8 @@
 <resources>
 	<dimen name="file_icon_size">32dp</dimen>
     <dimen name="file_icon_size_grid">128dp</dimen>
+    
+    <dimen name="dialog_width">220dp</dimen>
+    <dimen name="button_minWidth">100sp</dimen>
+    
 </resources>

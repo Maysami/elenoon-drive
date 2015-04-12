@@ -17,6 +17,7 @@
     <string-array name="actionbar_sortby">
     	<item>A-Z</item>
     	<item>Newest - Oldest</item>
+   
     	<!-- TODO re-enable when server-side folder size calculation is available   
     	<item>Biggest - Smallest</item>  -->
     </string-array>
@@ -327,5 +328,67 @@
     <string name="download_folder_failed_content">Download of %1$s folder could not be completed</string>
 
 	<string name="subject_token">%1$s shared \"%2$s\" with you</string>
+	
+	<!-- Meysami -->
+	<string name="actionbar_logout">خروج</string>	
+	
+	<string name="account_setup_basics_password_hint">گذرواژه</string>
+	<string name="account_setup_basics_password_retype_hint">تکرار رمز عبور</string>
+	
+	<string name="in_the_name_of_god">بــسمــه تــعــالــی</string>
+  <string name="send_sms_buttontext">ارسال پیامک</string>
+     <!-- Welcome message -->
+  <string name="welcome_message_title">به اِلِنون خوش آمدید!</string>
+  <string name="account_setup_basics_email_hint">آدرس ایمیل</string>
+  <string name="forgot_password">گذرواژه را فراموش کرده ام</string>
+  <string name="account_setup_basics_manual_setup_action">ثبت دستی</string>
+  <string name="account_setup_basics_activate_action">فعالسازی</string>
+  <string name="signin">ورود</string>
+  
+    <string name="change_password_hotkey">ر</string>
+    <string name="activate_account_hotkey">ر</string>
+  
+    <string name="accounts_activate">
+<![CDATA[
+	<br>
+	<h4>فعالسازی ایمیل</h4>
+    <p>
+                برای همه کسانی که شماره تلفن همراه دارند، در <a href="http://elenoon.ir">elenoon</a>، یک حساب کاربری در نظر گرفته شده است! کافی است برای تعیین رمز پست الکترونیک خود در <a href="http://elenoon.ir">elenoon</a> ، حرف <span>ر</span> یا <span>p</span> را به همراه رمز عبور مورد نظر خود، به شماره <span class="mobile">10003737</span> پیامک کنید. لازم به ذکر است که در اولین ورود شناسه شما، شماره تلفن همراه شما است.
+            </p>    
+    ]]>
+    </string>
+    <string name="accounts_changepassword">
+<![CDATA[
+	<br>
+	<h4>تغییر رمز عبور</h4>
+    <p>
+                برای این که رمز خود را به رمز مورد نظرتان تغییر دهید، به شماره <span class="mobile">10003737</span> عبارت <span>ر رمز مورد نظر</span> را از طریق پیامک ارسال کنید.<br>
+                <span class="like">مثال</span> : چنانچه بخواهید رمز خود را به <span class="mobile">ab123</span> تغییر دهید باید <span>ر ab123</span> را به <span class="mobile">10003737</span> ارسال کنید.
+            </p>
+    ]]>
+    </string>
+    <string name="accounts_signin">
+<![CDATA[
+	<br>
+	<h4>ورود به حساب</h4>
+    <p>
+    برای ورود به حساب کاربری کافیست که نام کاربری یا شماره موبایل خود را به همراه گذرواژه خود وارد کنید و دکمه ورود را فشار دهید.
+    </p>
+    ]]>
+    </string>
+    <string name="about">
+<![CDATA[
+	<div dir="rtl">
+	<p>
+بنیان نوآوری الکترونیک (النون) از سال 1391 پس از مدت‌ها مطالعه بازار فعالیت جدی خود را با هدف ارائه خدمات نوآورانه در فضای مجازی شروع نمود. هم اکنون این مجموعه خدمات متنوعی از جمله پست الکترونیکی، سیستم تقویم و مدیریت جلسات، نقشه، پنل پیامک، سیستم تسهیم فایل و ... را ارائه می¬نماید و به زودی خدمات نوآورانه دیگری را نیز به جمع خدمات خود اضافه می¬نماید.
+</p>
+<p> 
+امیدواریم که پست الکترونیکی النون و برنامک تلفن همراه آن رضایت شما را فراهم نماید. خوشحال میشویم که ایده¬ها، نظرات، پیشنهادات و انتقادات خود را از طریق پست الکترونیکی زیر با ما درمیان بگذارید:
+</p>
+<href emailto:"info@elenoon.ir">info@elenoon.ir</>	
+	</div>
+	]]>
+    </string>
+  
 
 </resources>

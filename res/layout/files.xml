@@ -27,13 +27,13 @@
 	<FrameLayout 
 		android:layout_width="0dp"
 		android:layout_height="match_parent"
-		android:layout_weight="1"
+		android:layout_weight="2"
 		android:id="@+id/right_fragment_container"
 	    />
 	<FrameLayout 
 		android:layout_width="0dp"
 		android:layout_height="match_parent"
-		android:layout_weight="2"
+		android:layout_weight="1"
 		android:id="@+id/left_fragment_container"
 	    />
 	
