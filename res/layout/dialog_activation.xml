@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/rounded_corners_2"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <EditText
+        android:id="@+id/account_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/account_setup_basics_password_hint"
+        android:inputType="textPassword"
+        android:minWidth="@dimen/dialog_width"
+        android:nextFocusDown="@+id/next"
+        android:singleLine="true" 
+        android:gravity="right"/>
+
+    <EditText
+        android:id="@+id/account_password_retype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/account_setup_basics_password_retype_hint"
+        android:inputType="textPassword"
+        android:minWidth="@dimen/dialog_width"
+        android:nextFocusDown="@+id/next"
+        android:singleLine="true"
+        android:gravity="right" />
+
+    <Button
+        android:id="@+id/activate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selectable_item_background_green"
+        android:minWidth="@dimen/button_minWidth"
+        android:text="@string/account_setup_basics_activate_action" />
+
+</LinearLayout>

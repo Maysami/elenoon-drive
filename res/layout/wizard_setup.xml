@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3EFF0"
+        android:gravity="bottom|right" >
+        
+        
+ 
+        <Button
+           	android:id="@+id/manual_setup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/selectable_item_background_green"
+            android:minWidth="@dimen/button_minWidth"
+            android:text="@string/account_setup_basics_manual_setup_action"
+            android:textColor="@color/textcolor"
+            android:visibility="gone" /> 
+     
+         
+        <Button
+            android:id="@+id/activate"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/selectable_item_background_green"
+            android:minWidth="@dimen/button_minWidth"
+            android:text="@string/account_setup_basics_activate_action"
+            android:textColor="@color/textcolor" />
+        <!--
+             <Button android:id="@+id/next" android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" android:layout_alignParentRight="true" 
+			android:drawableRight="@drawable/button_indicator_next" android:minWidth="@dimen/button_minWidth" 
+			android:text="@string/next_action" />
+        -->
+
+
+        <Button
+            android:id="@+id/buttonOK"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selectable_item_background_green"
+            android:drawableRight="@drawable/button_indicator_next"
+            android:minWidth="@dimen/button_minWidth"
+            android:text="@string/signin"
+            android:textColor="@color/textcolor"
+            android:onClick="onOkClick" />
+    </RelativeLayout>
+
+</merge>
