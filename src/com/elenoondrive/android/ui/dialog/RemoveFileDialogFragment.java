@@ -1,5 +1,7 @@
-/* ownCloud Android client application
+/*  ElenoonDrive Android application
+ *  ownCloud Android client application
  *   Copyright (C) 2014 ownCloud Inc.
+ *   
  *
  *   This program is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License version 2,
@@ -23,6 +25,7 @@ package com.elenoondrive.android.ui.dialog;
  *  Triggers the removal according to the user response. 
  *  
  *  @author David A. Velasco
+ *  @author Mohammadreza Meysami
  */
 import java.util.Vector;
 
@@ -49,6 +52,7 @@ implements ConfirmationDialogFragmentListener {
     public static RemoveFileDialogFragment newInstance(OCFile file) {
         RemoveFileDialogFragment frag = new RemoveFileDialogFragment();
         Bundle args = new Bundle();
+
         
         int messageStringId = R.string.confirmation_remove_alert;
         
@@ -63,7 +67,6 @@ implements ConfirmationDialogFragmentListener {
             neuBtn = R.string.confirmation_remove_local;
         }
         
-        
         args.putInt(ARG_CONF_RESOURCE_ID, messageStringId);
         args.putStringArray(ARG_CONF_ARGUMENTS, new String[]{file.getFileName()});
         args.putInt(ARG_POSITIVE_BTN_RES, posBtn);
@@ -77,10 +80,12 @@ implements ConfirmationDialogFragmentListener {
 
     private OCFile mTargetFile;
     
+    
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         mTargetFile = getArguments().getParcelable(ARG_TARGET_FILE);
+        dialog.setTitle(R.string.remove_dialog_title);
         
         setOnConfirmationListener(this);
         
@@ -101,6 +106,7 @@ implements ConfirmationDialogFragmentListener {
     
     /**
      * Performs the removal of the local copy of the target file
+     * @author Mohammadreza.Meysami
      */
     @Override
     public void onNeutral(String callerTag) {

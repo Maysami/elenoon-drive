@@ -45,6 +45,7 @@ import com.elenoondrive.android.ui.preview.PreviewImageFragment;
 import com.elenoondrive.android.ui.preview.PreviewMediaFragment;
 import com.elenoondrive.android.utils.FileStorageUtils;
 import com.owncloud.android.lib.common.utils.Log_OC;
+import com.saysys.android.base.ArabicNumber;
 
 /**
  * A Fragment that lists all files and folders in a given path.
@@ -424,7 +425,7 @@ public class OCFileListFragment extends ExtendedListFragment {
             }
         }
     }
-
+// Meysami
     private String generateFooterText(int filesCount, int foldersCount) {
         String output = "";
         if (filesCount > 0){
@@ -443,7 +444,7 @@ public class OCFileListFragment extends ExtendedListFragment {
             output = output + foldersCount + " " + getResources().getString(R.string.file_list_folders);
         }
 
-        return output;
+        return ArabicNumber.convertNumbers(output);
     }
 
 

@@ -71,6 +71,7 @@ import com.actionbarsherlock.view.Window;
 import com.elenoondrive.android.BuildConfig;
 import com.elenoondrive.android.MainApp;
 import com.elenoondrive.android.R;
+import com.elenoondrive.android.authentication.AuthenticatorActivity;
 import com.elenoondrive.android.datamodel.OCFile;
 import com.elenoondrive.android.files.services.FileDownloader;
 import com.elenoondrive.android.files.services.FileUploader;
@@ -118,6 +119,7 @@ import com.owncloud.android.lib.common.utils.Log_OC;
  * 
  * @author Bartek Przybylski
  * @author David A. Velasco
+ * @author Mohammadreza.Maysami
  */
 
 public class FileDisplayActivity extends HookActivity implements
@@ -462,9 +464,9 @@ OnSslUntrustedCertListener, OnEnforceableRefreshListener {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         if (BuildConfig.DEBUG) {
-            menu.findItem(R.id.action_logger).setVisible(true);
+           /* menu.findItem(R.id.action_logger).setVisible(true);*/
         } else {
-            menu.findItem(R.id.action_logger).setVisible(false);
+            /*menu.findItem(R.id.action_logger).setVisible(false);*/
         }
         return super.onPrepareOptionsMenu(menu);
     }
@@ -499,9 +501,20 @@ OnSslUntrustedCertListener, OnEnforceableRefreshListener {
             startActivity(settingsIntent);
             break;
         }
-        case R.id.action_logger: {
+     /*   case R.id.action_logger: {
             Intent loggerIntent = new Intent(getApplicationContext(),LogHistoryActivity.class);
             startActivity(loggerIntent);
+            break;
+        }*/
+        
+       /* case R.id.action_trash: {            
+            
+            break;
+        }
+        */
+        case R.id.action_logout: {
+            moveTaskToBack(true);
+            this.finish();
             break;
         }
         case android.R.id.home: {

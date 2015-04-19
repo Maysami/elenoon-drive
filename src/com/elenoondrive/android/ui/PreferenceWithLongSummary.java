@@ -20,7 +20,9 @@ package com.elenoondrive.android.ui;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.preference.Preference;
 
@@ -40,9 +42,27 @@ public class PreferenceWithLongSummary extends Preference{
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        TextView titleView = (TextView) view.findViewById(android.R.id.summary);
+        TextView titleView = (TextView) view.findViewById(android.R.id.title);
+        TextView summary = (TextView) view.findViewById(android.R.id.summary);
+        
+        RelativeLayout.LayoutParams params = (android.widget.RelativeLayout.LayoutParams) titleView.getLayoutParams();
+        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+//        params.addRule(RelativeLayout.LEFT_OF, android.R.id.checkbox);  
+        
+        titleView.setLayoutParams(params);
+        
+        RelativeLayout.LayoutParams params2 = (android.widget.RelativeLayout.LayoutParams) summary.getLayoutParams();
+        params2.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        params2.addRule(Gravity.RIGHT);
+
+
+        
         titleView.setSingleLine(true);
         titleView.setMaxLines(1);
         titleView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+        
+        summary.setLayoutParams(params2);
+        summary.setSingleLine(true);
+
     }
 }

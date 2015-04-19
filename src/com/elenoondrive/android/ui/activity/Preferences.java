@@ -36,6 +36,7 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -332,6 +333,7 @@ public class Preferences extends SherlockPreferenceActivity implements AccountMa
        if (pAboutApp != null) { 
                pAboutApp.setTitle(String.format(getString(R.string.about_android), getString(R.string.app_name)));
                pAboutApp.setSummary(String.format(getString(R.string.about_version), appVersion));
+               pAboutApp.getWidgetLayoutResource();
        }
 
        loadInstantUploadPath();
@@ -618,7 +620,7 @@ public class Preferences extends SherlockPreferenceActivity implements AccountMa
         editor.putString("instant_upload_path", mUploadPath);
         editor.commit();
     }
-
+  
     /**
      * Load upload video path set on preferences
      */

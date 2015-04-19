@@ -19,14 +19,12 @@
 package com.elenoondrive.android.utils;
 
 import java.net.IDN;
-import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Vector;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -37,12 +35,15 @@ import android.webkit.MimeTypeMap;
 import com.elenoondrive.android.MainApp;
 import com.elenoondrive.android.R;
 import com.elenoondrive.android.datamodel.OCFile;
+import com.saysys.android.base.AppCalendar;
+import com.saysys.android.base.ArabicNumber;
 
 /**
  * A helper class for some string operations.
  * 
  * @author Bartek Przybylski
  * @author David A. Velasco
+ * @author Mohammadreza Meysami
  */
 public class DisplayUtils {
     
@@ -122,7 +123,7 @@ public class DisplayUtils {
             attachedsuff++;
         }
         result = ((int) (result * 100)) / 100.;
-        return result + " " + sizeSuffixes[attachedsuff];
+        return ArabicNumber.convertNumbers( result + " " + sizeSuffixes[attachedsuff]);
     }
 
     /**
@@ -233,9 +234,12 @@ public class DisplayUtils {
      * @return The human readable time for the users locale
      */
     public static String unixTimeToHumanReadable(long milliseconds) {
-        Date date = new Date(milliseconds);
+        /*Date date = new Date(milliseconds);
         DateFormat df = DateFormat.getDateTimeInstance();
-        return df.format(date);
+        return df.format(date);*/
+        
+        AppCalendar appCalendar = new AppCalendar(milliseconds);
+        return appCalendar.getIranianDate();
     }
     
     
