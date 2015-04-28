@@ -23,7 +23,7 @@
             android:gravity="center|top"
             android:orientation="vertical" >
 
-            <TextView
+            <com.elenoondrive.android.ui.TextViewPlus
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -33,23 +33,25 @@
                 android:shadowDy="5"
                 android:shadowRadius="10"
                 android:text="@string/in_the_name_of_god"
-                android:textStyle="bold" />
+                android:textStyle="bold" 
+                app:customFont1="DroidNaskhBold.ttf"/>
         <LinearLayout
                 android:id="@+id/manual_layout"
                 android:layout_width="@dimen/dialog_width"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="270dp"
+                android:layout_marginTop="300dp"
                 android:background="@drawable/rounded"
                 android:orientation="vertical"
                 android:padding="10dp"
                 android:visibility="gone" >
 
-                <TextView
+                <com.elenoondrive.android.ui.TextViewPlus
                     android:id="@+id/manual_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="MANUAL" />
+                    android:text="MANUAL"
+                    app:customFont1="DroidNaskhRegularSystemUI.ttf" />
 
                 <Button
                     android:id="@+id/button_doaction"
@@ -70,33 +72,34 @@
                 android:orientation="vertical"
                 android:padding="10dp" >
 
-                <LinearLayout
-                    android:id="@+id/welcome_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|top"
-                    android:gravity="center|top"
-                    android:orientation="vertical" >
-
-                    <ImageView
+			     <LinearLayout
+			         android:id="@+id/welcome_layout"
+			         android:layout_width="225dp"
+			         android:layout_height="wrap_content"
+			         android:layout_gravity="center|top"
+			         android:gravity="right"
+			         android:orientation="vertical" >
+			         
+			         <ImageView
                         android:id="@+id/thumbnail"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:contentDescription="EleNoon"
+                        android:layout_gravity="center"
                         android:scaleType="fitCenter"
                         android:src="@drawable/logo" />
-
-                    <TextView
+                
+                		<com.elenoondrive.android.ui.TextViewPlus
                         android:layout_width="@dimen/dialog_width"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
                         android:gravity="center"
                         android:shadowColor="#aaaaaa"
                         android:shadowDx="5"
                         android:shadowDy="5"
                         android:shadowRadius="10"
                         android:text="@string/welcome_message_title"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" 
+                        app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
+			         
                     
                      <Button
             			android:id="@+id/centeredRefreshButton"
@@ -110,14 +113,15 @@
             			android:textColor="@color/textcolor"
             			android:visibility="gone" />
         
-        			<TextView
+        			<com.elenoondrive.android.ui.TextViewPlus
             			android:id="@+id/instructions_message"
             			android:layout_width="wrap_content"
             			android:layout_height="wrap_content"
             			android:layout_gravity="fill_horizontal"
             			android:text="@string/auth_expired_basic_auth_toast"
             			android:visibility="gone"
-            			android:layout_marginBottom="10dp" />
+            			android:layout_marginBottom="10dp" 
+            			app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 
 	    			<FrameLayout 
 	        			android:id="@+id/hostUrlFrame"
@@ -125,23 +129,11 @@
 						android:layout_height="wrap_content"
             			android:layout_marginBottom="10dp"
 	        			>
-					<EditText
-						android:id="@+id/hostUrlInput"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_gravity="bottom"
-						android:hint="@string/auth_host_url"
-						android:inputType="textUri"
-						android:drawablePadding="5dp"
-						android:paddingRight="55dp"
-						>
-					<requestFocus />
-					</EditText>
 					<ImageButton
 			    		android:id="@+id/embeddedRefreshButton"
 			    		android:layout_width="48dp"
 			    		android:layout_height="48dp"
-			    		android:layout_gravity="center_vertical|right"
+			    		android:layout_gravity="bottom"
 			    		android:layout_marginRight="5dp"
 			    		android:padding="0dp"
 			    		android:scaleType="fitCenter"
@@ -150,17 +142,27 @@
 						android:visibility="gone"
 						android:background="@android:color/transparent"
 			    		/>
+
+					<EditText
+					    android:id="@+id/hostUrlInput"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:drawablePadding="5dp"
+					    android:hint="@string/auth_host_url"
+					    android:inputType="textUri" />
+
 					</FrameLayout>
 
-					<TextView
+					<com.elenoondrive.android.ui.TextViewPlus
             			android:id="@+id/server_status_text"
             			android:layout_width="match_parent"
             			android:layout_height="wrap_content"
             			android:layout_marginBottom="10dp"
             			android:drawableLeft="@android:drawable/stat_notify_sync"
             			android:drawablePadding="5dp"
-            			android:gravity="center_vertical"
-            			android:text="@string/auth_testing_connection" />
+            			android:gravity="right"
+            			android:text="@string/auth_testing_connection"
+            			app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 
         			<CheckBox
             			android:id="@+id/oauth_onOff_check"
@@ -218,15 +220,16 @@
                     android:nextFocusDown="@+id/next"
                     android:singleLine="true" />
                 
-                <TextView
+                <com.elenoondrive.android.ui.TextViewPlus
             		android:id="@+id/auth_status_text"
             		android:layout_width="match_parent"
             		android:layout_height="wrap_content"
             		android:layout_marginBottom="10dp"
             		android:drawableLeft="@android:drawable/stat_notify_sync"
             		android:drawablePadding="5dp"
-            		android:gravity="center_vertical"
-            		android:text="@string/auth_unauthorized" />
+            		android:gravity="right"
+            		android:text="@string/auth_unauthorized"
+            		app:customFont1="DroidNaskhRegularSystemUI.ttf" />
                 
 <!--                 <Button
             		android:id="@+id/buttonOK"
@@ -245,6 +248,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textStyle="bold"
+                    android:layout_marginTop="5dp"
                     android:text="@string/forgot_password"
                     app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
                 

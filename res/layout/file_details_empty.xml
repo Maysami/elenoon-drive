@@ -18,16 +18,17 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
     android:background="#F7F7F7"
     android:orientation="vertical" >
 
-    <TextView 
+    <com.elenoondrive.android.ui.TextViewPlus 
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/filedetails_select_file"
-        />
+        app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 
 </LinearLayout>

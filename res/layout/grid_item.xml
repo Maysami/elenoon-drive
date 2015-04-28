@@ -17,6 +17,7 @@
   
 -->
 <com.elenoondrive.android.ui.SquareLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ListItemLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -86,7 +87,7 @@
 
     </FrameLayout>
 
-    <TextView
+    <com.elenoondrive.android.ui.TextViewPlus
         android:id="@+id/Filename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,6 +98,7 @@
         android:singleLine="true"
         android:text="TextView"
         android:textColor="@color/textColor"
-        android:textSize="16dip" />
+        android:textSize="16dip" 
+        app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 
 </com.elenoondrive.android.ui.SquareLinearLayout>

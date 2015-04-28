@@ -16,6 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -33,15 +34,17 @@
         android:paddingRight="12dp"
         android:paddingLeft="12dp"
         >
-		<TextView android:id="@+id/title"
+		<com.elenoondrive.android.ui.TextViewPlus 
+		    android:id="@+id/title"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:singleLine="true"
 			android:ellipsize="marquee"
             android:fadingEdge="horizontal"
             style="@style/Theme.ownCloud.NotificationText.Title"
-        	/>
-        <TextView android:id="@+id/text"
+        	app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
+        <com.elenoondrive.android.ui.TextViewPlus 
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
@@ -50,7 +53,7 @@
             android:fadingEdge="horizontal"
             android:ellipsize="marquee"
             style="@style/Theme.ownCloud.NotificationText.Content"
-            />
+            app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
         <FrameLayout android:id="@+id/progressHolder"
             android:layout_width="match_parent"
             android:layout_height="12dp"

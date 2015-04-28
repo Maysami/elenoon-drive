@@ -17,12 +17,6 @@
 
 package com.elenoondrive.android.ui.dialog;
 
-import com.actionbarsherlock.app.SherlockDialogFragment;
-import com.elenoondrive.android.R;
-import com.elenoondrive.android.datamodel.OCFile;
-import com.elenoondrive.android.ui.activity.ComponentsGetter;
-import com.owncloud.android.lib.resources.files.FileUtils;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -33,6 +27,12 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.actionbarsherlock.app.SherlockDialogFragment;
+import com.elenoondrive.android.R;
+import com.elenoondrive.android.datamodel.OCFile;
+import com.elenoondrive.android.ui.activity.ComponentsGetter;
+import com.owncloud.android.lib.resources.files.FileUtils;
 
 /**
  *  Dialog to input the name for a new folder to create.  
@@ -87,6 +87,7 @@ extends SherlockDialogFragment implements DialogInterface.OnClickListener {
                .setTitle(R.string.uploader_info_dirname);
         Dialog d = builder.create();
         d.getWindow().setSoftInputMode(LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        /*d.getWindow().setGravity(Gravity.RIGHT);*///the dialog move to right
         return d;
     }    
     

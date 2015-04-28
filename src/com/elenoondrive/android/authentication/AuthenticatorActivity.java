@@ -19,17 +19,24 @@
 package com.elenoondrive.android.authentication;
 
 import java.security.cert.X509Certificate;
+import java.util.Calendar;
 import java.util.Map;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.net.http.SslError;
@@ -98,6 +105,7 @@ import com.saysys.android.base.AppAnimation;
  * @author Bartek Przybylski
  * @author David A. Velasco
  * @author masensio
+ * @author Mohammadreza.Meysami
  */
 public class AuthenticatorActivity extends AccountAuthenticatorActivity
 implements  OnRemoteOperationListener, OnFocusChangeListener, OnEditorActionListener, 
@@ -201,6 +209,8 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
      * 
      * IMPORTANT ENTRY POINT 1: activity is shown to the user
      */
+    
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Log_OC.wtf(TAG,  "onCreate init");
@@ -243,6 +253,8 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
         initOverallUi(savedInstanceState);
         
         mOkButton = findViewById(R.id.buttonOK);
+        Typeface font = Typeface.createFromAsset(getAssets(), "DroidNaskhRegularSystemUI.ttf");
+        ((TextView) mOkButton).setTypeface(font);
 
         /// initialize block to be moved to single Fragment to check server and get info about it 
         initServerPreFragment(savedInstanceState);
@@ -261,6 +273,9 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
        
         
         mActivateButton = (Button)findViewById(R.id.activate);
+        
+        Typeface font2 = Typeface.createFromAsset(getAssets(), "DroidNaskhRegularSystemUI.ttf");
+        mActivateButton.setTypeface(font2);
         mActivateButton.setOnClickListener(this);   
 
         findViewById(R.id.password_forgoten).setOnClickListener(this);
@@ -331,6 +346,8 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
         
         /// step 2 - set properties of UI elements (text, visibility, enabled...)
         Button welcomeLink = (Button) findViewById(R.id.welcome_link);
+        Typeface fontwelcomeLink = Typeface.createFromAsset(getAssets(), "DroidNaskhRegularSystemUI.ttf");
+        welcomeLink.setTypeface(fontwelcomeLink);
         welcomeLink.setVisibility(isWelcomeLinkVisible ? View.VISIBLE : View.GONE);
         welcomeLink.setText(
                 String.format(getString(R.string.auth_register), getString(R.string.app_name)));
@@ -399,6 +416,8 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
         } else {
             findViewById(R.id.hostUrlFrame).setVisibility(View.GONE);
             mRefreshButton = findViewById(R.id.centeredRefreshButton);
+            Typeface fontmRefreshButton = Typeface.createFromAsset(getAssets(), "DroidNaskhRegularSystemUI.ttf");
+            ((TextView) mRefreshButton).setTypeface(fontmRefreshButton);
         }
         showRefreshButton(mServerIsChecked && !mServerIsValid && 
                 mWaitingForOpId > Integer.MAX_VALUE);
@@ -472,8 +491,15 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
         mOAuth2Check = (CheckBox) findViewById(R.id.oauth_onOff_check);
         mOAuthAuthEndpointText = (TextView)findViewById(R.id.oAuthEntryPoint_1);
         mOAuthTokenEndpointText = (TextView)findViewById(R.id.oAuthEntryPoint_2);
+        
         mUsernameInput = (EditText) findViewById(R.id.account_username);
+        Typeface fontmUsernameInput = Typeface.createFromAsset(getAssets(), "DroidNaskhRegularSystemUI.ttf");
+        mUsernameInput.setTypeface(fontmUsernameInput);
+        
         mPasswordInput = (EditText) findViewById(R.id.account_password);
+        Typeface fontPasswordInput = Typeface.createFromAsset(getAssets(), "DroidNaskhRegularSystemUI.ttf");
+        mPasswordInput.setTypeface(fontPasswordInput);
+        
         mAuthStatusView = (TextView) findViewById(R.id.auth_status_text); 
         
         /// step 1 - load and process relevant inputs (resources, intent, savedInstanceState)
@@ -1927,6 +1953,9 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
  * For Elenoondrive Application Android
  * The Login form
  * */
+    
+  
+
 
     
     
@@ -1941,11 +1970,14 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
             break;
         case R.id.activate:
             welcomeLayout.setVisibility(View.GONE);
+          /*  onAbout(this);*/
             onActivate();
+       
             break;
         case R.id.password_forgoten:
             welcomeLayout.setVisibility(View.GONE);
             onForgetPassword();
+            
             break;
         case R.id.account_username:
         case R.id.account_password:
@@ -1965,7 +1997,7 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
             @Override
             public void onClick(View v) {
                 confirmPasswordDialog(ACTIVATE);
-                
+                                
             }
         });
         
@@ -1973,9 +2005,64 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
         ll.setVisibility(View.VISIBLE);
         AppAnimation appAnimation = new AppAnimation(this);
         appAnimation.setAnimation(ll);       
-        appAnimation.startAnimation(ll, 21);      
+        appAnimation.startAnimation(ll, 12);      
                
     }
+    
+    
+    static private String getVersionNumber(Activity activity) {
+        String version = "?";
+        try {
+            PackageInfo pi = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0);
+            version = pi.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            //Log.e(TAG, "Package name not found", e);
+        }
+        return version;
+    }
+    
+    
+    
+    public static void onAbout(Activity activity) {
+        String appName = activity.getString(R.string.app_name);
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        WebView wv = new WebView(activity);
+        StringBuilder html = new StringBuilder()
+        .append("<html dir=\"rtl\">")
+        .append(activity.getString(R.string.html_style))
+        .append("<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" dir=\"rtl\"/>")
+        .append("<body><div align=\"center\">")
+        .append("<img  align=\"middle\" src=\"file:///android_asset/logo.png\" alt=\"").append(appName).append("\"/>")
+        .append("<h1>")
+        .append(String.format(activity.getString(R.string.about_title_fmt),
+                "<a href=\"" + activity.getString(R.string.app_webpage_url)) + "\">")
+                .append(appName)
+                .append("</a>")
+                .append("</h1><p>")
+                .append(appName)
+                .append(" ")
+                .append(String.format(activity.getString(R.string.debug_version_fmt), getVersionNumber(activity)))
+                .append("</p><p>")
+
+                .append(activity.getString(R.string.about));
+
+        
+        html.append("</div></body>").append("</html>");
+        wv.loadDataWithBaseURL("file:///android_res/drawable/", html.toString(), "text/html", "utf-8", null);
+        new AlertDialog.Builder(activity)
+        .setView(wv)
+        .setCancelable(true)
+        .setPositiveButton(R.string.okay_action, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface d, int c) {
+                d.dismiss();
+            }
+        })
+
+        .show();
+    }
+
+    
+    
     
     static String CHANGEPASSWORD = "Change Password";
     private void onForgetPassword() {
@@ -1988,6 +2075,7 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
             @Override
             public void onClick(View v) {
                 confirmPasswordDialog(CHANGEPASSWORD);
+               
             }
         });
         
@@ -1995,16 +2083,28 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
         ll.setVisibility(View.VISIBLE);
         AppAnimation appAnimation = new AppAnimation(this);
         appAnimation.setAnimation(ll);      
-        appAnimation.startAnimation(ll, 21);
+        appAnimation.startAnimation(ll, 12);
         
     }
 
     private void hideManualLayout() {
         LinearLayout ll = (LinearLayout) findViewById(R.id.manual_layout);
-        ll.setVisibility(View.GONE);        
+        ll.setVisibility(View.GONE); 
+        
     }
-
+    public void hideAccount(){
+        EditText l2 = (EditText) findViewById(R.id.account_password);
+        l2.setVisibility(View.GONE);
+        EditText l3 = (EditText) findViewById(R.id.account_username);
+        l3.setVisibility(View.GONE);
+        
+        /*ImageView imageDrive = (ImageView) findViewById(R.id.thumbnail);
+        imageDrive.setVisibility(View.INVISIBLE);*/
+        
+    }
     
+  
+   
     
     Dialog confirmPasswordDialog;
     EditText rePassowrdEt;
@@ -2029,7 +2129,7 @@ SsoWebViewClientListener, OnSslUntrustedCertListener ,OnClickListener {
                         activate();
                     else changePassword();
                 } else {
-                    Toast.makeText(getApplicationContext(), "wrong retyped password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.wrong_password, Toast.LENGTH_SHORT).show();
                 }               
             }
         });

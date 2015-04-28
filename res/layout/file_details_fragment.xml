@@ -18,6 +18,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    		xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/fdScrollView"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
@@ -40,14 +41,15 @@
 				android:layout_height="wrap_content"
 				android:src="@drawable/file" />
 				
-			<TextView
+			<com.elenoondrive.android.ui.TextViewPlus
 			    android:id="@+id/fdFilename"
 			    android:layout_width="wrap_content"
 			    android:layout_height="wrap_content"
 			    android:layout_centerVertical="true"
 			    android:layout_toRightOf="@+id/fdIcon"
 			    android:text="@string/placeholder_filename"
-			    android:textAppearance="?android:attr/textAppearanceLarge" />
+			    android:textAppearance="?android:attr/textAppearanceLarge" 
+			    app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 			
 		</RelativeLayout>
 	
@@ -65,16 +67,17 @@
 			    android:layout_alignParentTop="true"
 			    android:layout_marginLeft="16dp" >
 				
-				<TextView
+				<com.elenoondrive.android.ui.TextViewPlus
 				    android:id="@+id/fdTypeLabel"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
 				    android:layout_alignParentRight="true"
 				    android:layout_marginTop="24dp"
 				    android:text="@string/filedetails_type"
-				    android:textAppearance="?android:attr/textAppearanceMedium" />
+				    android:textAppearance="?android:attr/textAppearanceMedium" 
+				    app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 					
-				<TextView
+				<com.elenoondrive.android.ui.TextViewPlus
 				    android:id="@+id/fdSizeLabel"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
@@ -82,9 +85,10 @@
 				    android:layout_below="@+id/fdTypeLabel"
 				    android:layout_marginTop="12dp"
 				    android:text="@string/filedetails_size"
-				    android:textAppearance="?android:attr/textAppearanceMedium" />
+				    android:textAppearance="?android:attr/textAppearanceMedium" 
+				    app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 					
-				<TextView
+				<com.elenoondrive.android.ui.TextViewPlus
 					android:id="@+id/fdCreatedLabel"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -92,9 +96,10 @@
 					android:layout_marginTop="12dp"
 					android:text="@string/filedetails_created"
 					android:visibility="gone"
-					android:textAppearance="?android:attr/textAppearanceMedium" />
+					android:textAppearance="?android:attr/textAppearanceMedium" 
+					app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 					  
-				<TextView
+				<com.elenoondrive.android.ui.TextViewPlus
 				    android:id="@+id/fdModifiedLabel"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
@@ -102,7 +107,8 @@
 				    android:layout_below="@+id/fdCreatedLabel"
 				    android:layout_marginTop="12dp"
 				    android:text="@string/filedetails_modified"
-				    android:textAppearance="?android:attr/textAppearanceMedium" />
+				    android:textAppearance="?android:attr/textAppearanceMedium" 
+				    app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 
 			</RelativeLayout>
 	
@@ -114,24 +120,26 @@
 			    android:layout_alignParentTop="true"
 			    android:layout_marginLeft="12dp" >
 				
-				<TextView
+				<com.elenoondrive.android.ui.TextViewPlus
 					android:id="@+id/fdType"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="24dp"
 					android:text="@string/placeholder_filetype"
-					android:textAppearance="?android:attr/textAppearanceMedium" />
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					app:customFont1="DroidNaskhRegularSystemUI.ttf" />
 					
-				<TextView
+				<com.elenoondrive.android.ui.TextViewPlus
 					android:id="@+id/fdSize"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_below="@+id/fdType"
 					android:layout_marginTop="12dp"
 					android:text="@string/placeholder_filesize"
-					android:textAppearance="?android:attr/textAppearanceMedium" />
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					app:customFont1="DroidNaskhRegularSystemUI.ttf" />
 					
-				<TextView
+				<com.elenoondrive.android.ui.TextViewPlus
 					android:id="@+id/fdCreated"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -139,16 +147,18 @@
 					android:layout_marginTop="12dp"
 					android:visibility="gone"
 					android:text="@string/placeholder_timestamp"
-					android:textAppearance="?android:attr/textAppearanceMedium" />
+					android:textAppearance="?android:attr/textAppearanceMedium" 
+					app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 					
-				<TextView
+				<com.elenoondrive.android.ui.TextViewPlus
 					android:id="@+id/fdModified"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_below="@+id/fdCreated"
 					android:layout_marginTop="12dp"
 					android:text="@string/placeholder_timestamp"
-					android:textAppearance="?android:attr/textAppearanceMedium" />
+					android:textAppearance="?android:attr/textAppearanceMedium" 
+					app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 		
 			</RelativeLayout>
 	
@@ -176,12 +186,12 @@
 				android:layout_below="@id/fdKeepInSync"
 				android:orientation="vertical" >
 				
-    			<TextView 
+    			<com.elenoondrive.android.ui.TextViewPlus
     			    android:id="@+id/fdProgressText" 
     			    android:layout_width="match_parent"
       				android:layout_height="wrap_content" 
       				android:text="@string/downloader_download_in_progress_ticker"
-      				/>
+      				app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
     			
 			    <LinearLayout
 			        android:id="@+id/fdProgressBlock"

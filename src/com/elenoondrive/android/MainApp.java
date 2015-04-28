@@ -38,7 +38,7 @@ import com.owncloud.android.lib.common.utils.Log_OC;
  * @author David A. Velasco
  * @author Mohammadreza.Maysami
  */
-@ReportsCrashes(formKey = "",
+/*@ReportsCrashes(formKey = "",
 mailTo = "meysami@elenoon.ir, famd63@elenoon.ir",
 customReportContent = { 
         ReportField.ANDROID_VERSION, 
@@ -53,7 +53,7 @@ customReportContent = {
         ReportField.STACK_TRACE,
 },                
 mode = ReportingInteractionMode.TOAST,
-resToastText = R.string.send_error_report)
+resToastText = R.string.send_error_report)*/
 public class MainApp extends Application {
     
     private static final String AUTH_ON = "on";
@@ -68,7 +68,7 @@ public class MainApp extends Application {
     public void onCreate(){
         super.onCreate();
         MainApp.mContext = getApplicationContext();
-        ACRA.init(this);
+        /*ACRA.init(this);*/
         boolean isSamlAuth = AUTH_ON.equals(getString(R.string.auth_method_saml_web_sso));
         
         if (isSamlAuth) {   

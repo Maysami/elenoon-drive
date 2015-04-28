@@ -780,6 +780,7 @@ OnSslUntrustedCertListener, OnEnforceableRefreshListener {
         if (mDualPane || getSecondFragment() == null) {
             if (listOfFiles != null) {  // should never be null, indeed
                 if (mDirectories.getCount() <= 1) {
+                    System.exit(0);
                     finish();
                     return;
                 }

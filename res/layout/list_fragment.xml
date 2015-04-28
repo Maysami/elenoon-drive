@@ -18,6 +18,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -68,14 +69,15 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
-                <TextView
+                <com.elenoondrive.android.ui.TextViewPlus
                     android:id="@+id/empty_list_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center_vertical|center_horizontal"
                     android:text="@string/empty"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    app:customFont1="DroidNaskhRegularSystemUI.ttf" />
             </ScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>
 

@@ -19,6 +19,7 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -54,7 +55,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView 
+        <com.elenoondrive.android.ui.TextViewPlus  
             android:id="@+id/currentTimeText"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -65,7 +66,7 @@
             android:layout_height="wrap_content"
             android:paddingEnd="4dp"
             android:text="@string/placeholder_media_time"
-            />
+            app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 
         <SeekBar
             android:id="@+id/progressBar"
@@ -76,7 +77,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true" />
 
-        <TextView android:id="@+id/totalTimeText"
+        <com.elenoondrive.android.ui.TextViewPlus 
+            android:id="@+id/totalTimeText"
             android:textSize="14sp"
             android:textStyle="bold"
             android:paddingTop="4dp"
@@ -86,7 +88,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="4dp"
             android:text="@string/placeholder_media_time"
-            />
+            app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
         
     </LinearLayout>
 

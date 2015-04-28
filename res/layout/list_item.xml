@@ -76,7 +76,7 @@
             android:gravity="center_vertical"
             android:orientation="vertical" >
 
-            <TextView
+            <com.elenoondrive.android.ui.TextViewPlus
                 android:id="@+id/Filename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,7 +87,8 @@
                 android:singleLine="true"
                 android:text="TextView"
                 android:textColor="#303030"
-                android:textSize="16dip" />
+                android:textSize="16dip" 
+                app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,9 +106,9 @@
                     android:text="TextView"
                     android:textColor="@color/list_item_lastmod_and_filesize_text"
                     android:textSize="12dip"
-                    app:customFont1="Byekan.ttf" />
+                    app:customFont1="DroidNaskhRegularSystemUI.ttf" />
 
-                <TextView
+                <com.elenoondrive.android.ui.TextViewPlus
                     android:id="@+id/file_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -115,7 +116,8 @@
                     android:gravity="right"
                     android:text="TextView"
                     android:textColor="@color/list_item_lastmod_and_filesize_text"
-                    android:textSize="12dip" />
+                    android:textSize="12dip"
+                    app:customFont1="DroidNaskhRegularSystemUI.ttf" />
             </LinearLayout>
         </LinearLayout>
 

@@ -17,13 +17,14 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color" 
     android:id="@+id/explanation"
     android:orientation="vertical">
 
-	<TextView
+	<com.elenoondrive.android.ui.TextViewPlus
 		android:id="@+id/message"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
@@ -31,7 +32,7 @@
 	    android:padding="10dip"
 	    android:scrollbarAlwaysDrawVerticalTrack="true"
 		android:text="@string/placeholder_sentence" 
-		/>
+		 app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
     
 	<ListView 
 	    android:id="@+id/list"

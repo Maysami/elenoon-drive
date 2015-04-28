@@ -19,6 +19,7 @@
 -->
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	 xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:orientation="horizontal"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content" 
@@ -31,7 +32,7 @@
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"/>
 
-	<TextView 
+	<com.elenoondrive.android.ui.TextViewPlus 
 		android:id="@+id/title"
 		android:layout_width="fill_parent" 
 		android:layout_height="fill_parent" 
@@ -39,6 +40,7 @@
 		android:paddingLeft="5dip"
 		android:paddingRight="10dip"
 		android:text="Chart"
-		android:textColor="#fff"/>
+		android:textColor="#fff"
+		app:customFont1="DroidNaskhRegularSystemUI.ttf"/>
 									         
 </LinearLayout>         

@@ -21,6 +21,7 @@ import java.io.File;
 
 import android.accounts.Account;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -105,8 +106,13 @@ public class UploadFilesActivity extends FileActivity implements
         
         // Set input controllers
         mCancelBtn = (Button) findViewById(R.id.upload_files_btn_cancel);
+        Typeface facemCancelBtn=Typeface.createFromAsset(getAssets(),"DroidNaskhRegularSystemUI.ttf");
+        mCancelBtn.setTypeface(facemCancelBtn);       
         mCancelBtn.setOnClickListener(this);
+        
         mUploadBtn = (Button) findViewById(R.id.upload_files_btn_upload);
+        Typeface facemUploadBtn=Typeface.createFromAsset(getAssets(),"DroidNaskhRegularSystemUI.ttf");
+        mUploadBtn.setTypeface(facemUploadBtn);
         mUploadBtn.setOnClickListener(this);
         
             

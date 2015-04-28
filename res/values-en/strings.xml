@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+        <string name="about_title_fmt">		درباره
+ <xliff:g id="app_name">%s</xliff:g></string>
+ 
+	    <string name="debug_version_fmt">		نسخه:
+ <xliff:g id="version">%s</xliff:g></string>      
+ 
+	<string name="okay_action">تأیید
+	</string>
   <string name="about_android">%1$s برنامه اندروید</string>
   <string name="about_version">نسخه%1$s </string>
   <string name="actionbar_sync">بروز رسانی</string>
@@ -76,9 +84,9 @@
   <string name="filedetails_size">اندازه:</string>
   <string name="filedetails_type">نوع:</string>
   <string name="filedetails_created">ایجاد شده توسط:</string>
-  <string name="filedetails_modified">تغییر یافته توسط:</string>
+  <string name="filedetails_modified">ایجاد شده در تاریخ:</string>
   <string name="filedetails_download">بارگیری</string>
-  <string name="filedetails_sync_file">بازنمایی فایل</string>
+  <string name="filedetails_sync_file">بروز رسانی فایل</string>
   <string name="filedetails_renamed_in_upload_msg">فایل در هنگام بارگذاری به %1$s تغییر نام یافت</string>
   <string name="action_share_file">اشتراک گذاشتن لینک</string>
   <string name="action_unshare_file">لغو اشتراک گذاشتن لینک</string>
@@ -156,8 +164,8 @@
   <string name="media_forward_description">دکمه رو به جلو سریع</string>
   <string name="auth_trying_to_login">تلاش برای ورود...</string>
   <string name="auth_no_net_conn_title">هیچ ارتباطی به شبکه موجود نیست</string>
-  <string name="auth_nossl_plain_ok_title">اتصال با موفقیت به النون برقرار است.  :)</string>
-  <string name="auth_connection_established">اتصال با موفقیت به النون برقرار است.  :)</string>
+  <string name="auth_nossl_plain_ok_title">اتصال با موفقیت به النون برقرار است.  </string>
+  <string name="auth_connection_established">اتصال با موفقیت به النون برقرار است.  </string>
   <string name="auth_testing_connection">آزمایش اتصال...</string>
   <string name="auth_not_configured_title">پیکربندی سرور ناقص است</string>
   <string name="auth_account_not_new">یک اکانت با همین نام کاربری و سرور بر روی این دستگاه موجود می‌باشد.</string>
@@ -171,7 +179,7 @@
   <string name="auth_ssl_unverified_server_title">نمی‌توان اصالت SSL سرور را احراز نمود</string>
   <string name="auth_bad_oc_version_title">نسخه ی سرور ناشناخته</string>
   <string name="auth_wrong_connection_title">نمیتوان ارتباط برقرار نمود.</string>
-  <string name="auth_secure_connection">اتصال با موفقیت به النون برقرار است.  :)</string>
+  <string name="auth_secure_connection">اتصال با موفقیت به النون برقرار است.  </string>
   <string name="auth_unauthorized">نام کاربری یا رمز ورود اشتباه است</string>
   <string name="auth_oauth_error">اجازه ناموفق</string>
   <string name="auth_oauth_error_access_denied">دسترسی توسط سرور احراز هویت رد شده است.</string>
@@ -236,7 +244,7 @@
   <string name="placeholder_media_time">12:23:45</string>
   <string name="instant_upload_on_wifi">تصاویر را فقط از طریق wifi بارگذاری کن</string>
   <string name="instant_video_upload_on_wifi">آپلود ویدیو فقط از طریق WiFi</string>
-  <string name="instant_upload_path">آپلود فوری</string>
+  <!-- <string name="instant_upload_path">آپلود فوری</string> -->
   <string name="conflict_title">بارگذاری ناسازگار</string>
   <string name="conflict_message">فایل های دور از دسترس %s با فایل های محلی همگام نشده اند. ادامه کار، محتوا را بر روی فایل در سرور جایگزین خواهد کرد.</string>
   <string name="conflict_keep_both">نگهداشتن هر دو</string>
@@ -264,4 +272,7 @@
   <string name="action_trash">فایل های حذف شده</string>
  <string name="remove_dialog_title">توجه  !</string>  
  <string name="confirmation_remove_folder_alert">"آیا شما واقعاً می خواهید پوشه  '%1$s' و محتویات آن را حذف کنید ؟"</string>
+ <string name="wrong_password">گذرواژه با تکرار آن معادل نمی باشد !</string>
+ <string name="file_list_empty_moving">اینجا هیچ چیز نیست،شما می توانید یک پوشه ایجاد کنید !</string>
+ <string name="exit_elenoondrive"> برای خروج ، کلید بازگشت را یکبار دیگر لمس کنید!</string>
 </resources>
